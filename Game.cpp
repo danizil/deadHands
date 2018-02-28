@@ -35,25 +35,29 @@ void Game::gameloop() {
 	switch (_gameState) {
 		case Game::Playing:
 		{
-			sf::Event currentEvent;
+			/*
 			Sleep(10);
 			_gameObjectManager.updateAll();
 			_gameObjectManager.drawAll(_mainWindow);
 			_mainWindow.display();
+			_mainWindow.clear(sf::Color::Green);
+			*/
+			sf::Event currentEvent;
 			if(_mainWindow.pollEvent(currentEvent)){
 				while (_mainWindow.pollEvent(currentEvent)) { //might be a prob here
 				
-					_mainWindow.clear(sf::Color::Green);
 				
 				
-					_gameObjectManager.updateAll();
-					_gameObjectManager.drawAll(_mainWindow);
-					_mainWindow.display();
+					//_gameObjectManager.updateAll();
+					//_gameObjectManager.drawAll(_mainWindow);
+					//_mainWindow.display();
 
 					if (currentEvent.type == sf::Event::Closed) _gameState = Exiting;
 				
 					if (currentEvent.type == sf::Event::KeyPressed) {
-						if (currentEvent.key.code == sf::Keyboard::Escape) showMenu();
+						if (currentEvent.key.code == sf::Keyboard::Escape) {
+							showMenu();
+						}
 						
 						
 					}
@@ -63,14 +67,15 @@ void Game::gameloop() {
 	
 			
 			}
-			/*
+			
 			else {
 				Sleep(10);
 				_gameObjectManager.updateAll();
 				_gameObjectManager.drawAll(_mainWindow);
 				_mainWindow.display();
+				_mainWindow.clear(sf::Color::Green);
 			}
-			*/
+			
 			break;
 		}
 		case Game::ShowingSplash:

@@ -1,5 +1,2 @@
-﻿  PlayerPaddle.cpp
-c:\users\user\source\repos\gameforreal\gameforreal\playerpaddle.cpp(41): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Game.cpp
-  Generating Code...
+﻿  Game.cpp
   GameForReal.vcxproj -> C:\Users\User\source\repos\GameForReal\Debug\GameForReal.exe

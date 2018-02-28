@@ -52,7 +52,6 @@ void GameObjectManager::drawAll(sf::RenderWindow& window) {
 void GameObjectManager::updateAll() {
 
 	float dt = getDt();//i should get dt at the item level cause every object has its time
-	std::cout << "gameobjectman 55 " << dt << "\n";
 	std::map<std::string, VisibleGameObject*>::const_iterator it = _gameObjects.begin();
 	while (it != _gameObjects.end()){
 		it->second->updatePosition(dt);
