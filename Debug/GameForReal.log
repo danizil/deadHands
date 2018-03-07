@@ -1,13 +1,3 @@
-﻿  stdafx.cpp
-  main.cpp
-  VisibleGameObject.cpp
-  SplashScreen.cpp
-  PlayerPaddle.cpp
+﻿  PlayerPaddle.cpp
 c:\users\user\source\repos\gameforreal\gameforreal\playerpaddle.cpp(75): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\user\source\repos\gameforreal\gameforreal\playerpaddle.cpp(73): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
-c:\users\user\source\repos\gameforreal\gameforreal\playerpaddle.cpp(73): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'double'
-  MainMenu.cpp
-  GameObjectManager.cpp
-  Game.cpp
-  Generating Code...
   GameForReal.vcxproj -> C:\Users\User\source\repos\GameForReal\Debug\GameForReal.exe
