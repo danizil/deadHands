@@ -14,6 +14,7 @@ public:
 	static const int SCREEN_WIDTH = 1024;
 	static const int SCREEN_HEIGHT = 700;
 	static sf::RenderWindow& getWindow() { return _mainWindow; };
+	static void showMenu();
 
 private:
 	
@@ -25,7 +26,7 @@ private:
 	static GameObjectManager _gameObjectManager;
 
 	static void showSplashScreen();
-	static void showMenu();
+	
 
 	static bool isExiting();
 	static void gameloop();

@@ -7,6 +7,7 @@ public:
 	PlayerPaddle();
 	~PlayerPaddle();
 	
+	void getUserInput();
 	void updatePosition(float elapsedTime);
 	//void draw(sf::RenderWindow& window);
 
