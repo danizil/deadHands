@@ -9,6 +9,8 @@ public:
 	virtual void draw(sf::RenderWindow& window);
 	virtual void updatePosition(float elapsedTime);
 	
+	virtual void getUserInput(){}
+
 	virtual void setPosition(float x, float y);
 	virtual sf::Vector2f getPosition() const;
 	virtual bool isLoaded();

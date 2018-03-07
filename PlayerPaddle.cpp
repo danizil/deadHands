@@ -32,6 +32,7 @@ void PlayerPaddle::getUserInput() {
 	}
 	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) Game::showMenu();
+
 }
 
 

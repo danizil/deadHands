@@ -41,42 +41,42 @@ void Game::gameloop() {
 			_gameObjectManager.drawAll(_mainWindow);
 			_mainWindow.display();
 			_mainWindow.clear(sf::Color::Green);
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) showMenu();
+			//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) showMenu();
 	
 			
 			sf::Event currentEvent;
-			if(_mainWindow.pollEvent(currentEvent)){
-				while (_mainWindow.pollEvent(currentEvent)) { //might be a prob here
-				
-				
-				
-					//_gameObjectManager.updateAll();
-					//_gameObjectManager.drawAll(_mainWindow);
-					//_mainWindow.display();
 
-					if (currentEvent.type == sf::Event::Closed) _gameState = Exiting;
+			while (_mainWindow.pollEvent(currentEvent)) { //might be a prob here
 				
-					if (currentEvent.type == sf::Event::KeyPressed) {
-						if (currentEvent.key.code == sf::Keyboard::Escape) showMenu();
-						
-						
-						
+				switch (currentEvent.type) {
+					
+					case sf::Event::Closed: {
+						_gameState = Exiting;
 					}
-
-
+					case sf::Event::KeyPressed: {
+						_gameObjectManager.getObject("player1")->getUserInput();
+					}
+					
 				}
+				
+				//_gameObjectManager.updateAll();
+				//_gameObjectManager.drawAll(_mainWindow);
+				//_mainWindow.display();
+
+		
+				
+				if (currentEvent.type == sf::Event::KeyPressed) {
+					if (currentEvent.key.code == sf::Keyboard::Escape) showMenu();
+						
+						
+						
+				}
+
+
+			}
 	
 			
-			}
-			/*
-			else {
-				Sleep(10);
-				_gameObjectManager.updateAll();
-				_gameObjectManager.drawAll(_mainWindow);
-				_mainWindow.display();
-				_mainWindow.clear(sf::Color::Green);
-			}
-			*/
+			
 			break;
 		}
 		case Game::ShowingSplash:
