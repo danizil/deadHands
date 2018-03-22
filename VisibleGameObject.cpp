@@ -2,6 +2,11 @@
 #include "VisibleGameObject.h"
 
 
+VisibleGameObject::Rect::Rect(sf::Vector2f meas):_measurements(meas) {
+	
+}
+
+
 VisibleGameObject::VisibleGameObject():_isLoaded(false)
 {
 }
@@ -19,6 +24,8 @@ void VisibleGameObject::load(std::string filename) {
 	else {
 		_filename = filename;
 		_sprite.setTexture(_texture);
+		_sprite.setOrigin(_texture.getSize().x / 2, _texture.getSize().y / 2);
+		
 		_isLoaded = true;
 	}
 }
@@ -47,6 +54,10 @@ sf::Vector2f VisibleGameObject::getPosition() const {
 	return sf::Vector2f();
 }
 
+sf::Vector2f VisibleGameObject::getOrigin() const {
+	return _sprite.getOrigin();
+}
+
 sf::Sprite& VisibleGameObject::getSprite() {
 	return _sprite;
 }
@@ -54,3 +65,10 @@ sf::Sprite& VisibleGameObject::getSprite() {
 bool VisibleGameObject::isLoaded() { 
 	return _isLoaded; }
 
+
+bool VisibleGameObject::Rect::inDomain(float x, float y) {
+	//do the rotation transformation
+	
+	std::cout << "visiGameObj64 finish inDomain function\n";
+	return true;
+}

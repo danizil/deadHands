@@ -36,14 +36,16 @@ MainMenu::MenuResult MainMenu::getMenuResponse(sf::RenderWindow& window) {
 	sf::Event menuEvent;
 	while (true) {
 		while (window.pollEvent(menuEvent)) {
+			
 			if (menuEvent.type == sf::Event::MouseButtonPressed) {
 				return handleClick(menuEvent.mouseButton.x, menuEvent.mouseButton.y);
 			}
 
-			if (menuEvent.type == sf::Event::Closed ||
-				(menuEvent.type == sf::Event::KeyPressed && menuEvent.KeyPressed == sf::Keyboard::Escape)) {
+			if (menuEvent.type == sf::Event::Closed
+			  ||menuEvent.type == sf::Event::KeyPressed && menuEvent.key.code == sf::Keyboard::Q) {
 				return Exit;
 			}
+
 		}
 	}
 }

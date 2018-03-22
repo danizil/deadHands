@@ -1,3 +1,13 @@
-﻿  PlayerPaddle.cpp
-c:\users\user\source\repos\gameforreal\gameforreal\playerpaddle.cpp(75): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+﻿  stdafx.cpp
+  main.cpp
+  VisibleGameObject.cpp
+c:\users\user\source\repos\gameforreal\gameforreal\visiblegameobject.cpp(27): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  SplashScreen.cpp
+  PlayerPaddle.cpp
+  MainMenu.cpp
+  GameObjectManager.cpp
+  GameBall.cpp
+  Game.cpp
+  Funcs.cpp
+  Generating Code...
   GameForReal.vcxproj -> C:\Users\User\source\repos\GameForReal\Debug\GameForReal.exe

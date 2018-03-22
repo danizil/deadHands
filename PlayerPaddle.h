@@ -4,18 +4,19 @@ class PlayerPaddle :
 	public VisibleGameObject
 {
 public:
+
 	PlayerPaddle();
 	~PlayerPaddle();
 	
 	void getUserInput();
 	void updatePosition(float elapsedTime);
 	//void draw(sf::RenderWindow& window);
-
-	float getVelocity() const;
-	void setVelocity(float v);
+	
+	sf::Vector2f getVelocity() const;
+	void setVelocity(sf::Vector2f v);
 
 private:
-	float _velocity;
 
+	sf::Vector2f _velocity;
 };
 

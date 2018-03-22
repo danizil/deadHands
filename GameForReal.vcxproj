@@ -147,7 +147,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Funcs.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameBall.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="PlayerPaddle.h" />
@@ -157,7 +159,9 @@
     <ClInclude Include="VisibleGameObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Funcs.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameBall.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />

@@ -2,6 +2,8 @@
 #include "Game.h"
 #include "VisibleGameObject.h"
 #include "PlayerPaddle.h"
+#include "GameBall.h"
+
 
 void Game::start()
 {
@@ -10,12 +12,17 @@ void Game::start()
 	}
 
 	_mainWindow.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "Pangale");
+	
 	PlayerPaddle* player1 = new PlayerPaddle;
-	player1->load("images/paddle.png");
-	player1->setPosition(1024 / 2 - 45, 650);
+	//player1->load("images/paddle.png");
+	player1->setPosition(512, 350);
+
+	GameBall* theBall = new GameBall;
+	theBall->setPosition(530, 370);
 
 	_gameObjectManager.add("player1", player1);
-	
+	_gameObjectManager.add("ball", theBall);
+
 	_gameState = ShowingSplash;
 
 	while (!isExiting()) {
@@ -35,13 +42,12 @@ void Game::gameloop() {
 	switch (_gameState) {
 		case Game::Playing:
 		{
-			
-			//Sleep(10);
+			_gameObjectManager.getObject("player1")->getUserInput();
 			_gameObjectManager.updateAll();
 			_gameObjectManager.drawAll(_mainWindow);
 			_mainWindow.display();
 			_mainWindow.clear(sf::Color::Green);
-			//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) showMenu();
+			
 	
 			
 			sf::Event currentEvent;
@@ -54,16 +60,10 @@ void Game::gameloop() {
 						_gameState = Exiting;
 					}
 					case sf::Event::KeyPressed: {
-						_gameObjectManager.getObject("player1")->getUserInput();
+						
 					}
 					
 				}
-				
-				//_gameObjectManager.updateAll();
-				//_gameObjectManager.drawAll(_mainWindow);
-				//_mainWindow.display();
-
-		
 				
 				if (currentEvent.type == sf::Event::KeyPressed) {
 					if (currentEvent.key.code == sf::Keyboard::Escape) showMenu();
@@ -116,7 +116,9 @@ void Game::showMenu() {
 	
 	}
 
-
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+		_gameState = Exiting;
+	}
 }
 
 
